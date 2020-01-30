@@ -23,4 +23,18 @@ public class Hospital {
     public void addPatientToHospitalMap(HospitalPatient patient) {
         getMapOfPatients().put(patient.getPatientName(), patient);
     }
+
+    public void showDutyRoster() {
+        System.out.println("Here is every employee available:");
+        for (HospitalEmployee employee : getMapOfEmployees().values()) {
+            System.out.println(employee);
+        }
+    }
+
+    public void showAllPatients() {
+        System.out.println("Here is every patient in your care:");
+        for (HospitalPatient patient : getMapOfPatients().values()) {
+            System.out.println(patient);
+        }
+    }
 }

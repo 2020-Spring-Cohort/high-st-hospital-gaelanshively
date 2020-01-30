@@ -15,4 +15,11 @@ public class HospitalPatient {
     public String getPatientName() {
         return patientName;
     }
+
+    @Override
+    public String toString() {
+        return patientName + ": \n"
+                + "     Patient Health: " + patientHealth
+                + "\n     Blood Level: " + patientBlood;
+    }
 }

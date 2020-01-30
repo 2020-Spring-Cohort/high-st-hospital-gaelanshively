@@ -78,6 +78,16 @@ public class EmployeeTest {
 
         Assertions.assertEquals("Frankfurt", patientInstance.getPatientName());
     }
+
+    @Test
+    public void askingForDutyRosterShouldShowStaff() {
+        hospitalInstance.showDutyRoster();
+    }
+
+    @Test
+    public void askingForPatientListShouldShowAllPatients() {
+        hospitalInstance.showAllPatients();
+    }
 }
 
 
