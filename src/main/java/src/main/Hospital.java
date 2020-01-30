@@ -10,7 +10,17 @@ public class Hospital {
         return mapOfEmployees;
     }
 
+    private HashMap<String, HospitalPatient> mapOfPatients = new HashMap<>();
+
+    public HashMap<String, HospitalPatient> getMapOfPatients() {
+        return mapOfPatients;
+    }
+
     public void addEmployeeToHospitalMap(HospitalEmployee employee) {
         getMapOfEmployees().put(employee.getEmployeeName(), employee);
+    }
+
+    public void addPatientToHospitalMap(HospitalPatient patient) {
+        getMapOfPatients().put(patient.getPatientName(), patient);
     }
 }

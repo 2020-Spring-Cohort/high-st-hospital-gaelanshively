@@ -1,6 +1,8 @@
 package main;
 
 public class HospitalEmployee {
+    // super class of all hospital employees
+
 
     private String employeeName;
     private double employeeSalary;
@@ -12,10 +14,6 @@ public class HospitalEmployee {
         this.employeeSalary = employeeSalary;
         this.employeeIdentification = employeeIdentification;
         this.employeePosition = employeePosition;
-
-    }
-
-    public HospitalEmployee() {
 
     }
 
