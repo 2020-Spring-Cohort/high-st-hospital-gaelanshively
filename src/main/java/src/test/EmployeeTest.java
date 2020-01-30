@@ -88,6 +88,11 @@ public class EmployeeTest {
     public void askingForPatientListShouldShowAllPatients() {
         hospitalInstance.showAllPatients();
     }
+
+    @Test
+    public void getPatientBloodShouldGetMeSomeBlood() {
+        Assertions.assertEquals(25, patientInstance.getPatientBlood());
+    }
 }
 
 

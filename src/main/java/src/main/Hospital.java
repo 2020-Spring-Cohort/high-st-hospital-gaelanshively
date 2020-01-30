@@ -37,4 +37,5 @@ public class Hospital {
             System.out.println(patient);
         }
     }
+
 }
