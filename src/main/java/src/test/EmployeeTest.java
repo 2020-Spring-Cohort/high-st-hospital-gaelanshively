@@ -1,9 +1,6 @@
 package test;
 
-import main.Hospital;
-import main.HospitalEmployee;
-import main.HospitalPatient;
-import main.MedicalStaff;
+import main.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,9 +16,9 @@ public class EmployeeTest {
 
     @BeforeEach
     void setUp() {
-        employeeInstance = new HospitalEmployee("Name", 450.00, 80085, "Unemployed");
+        employeeInstance = new FacilityStaff("Name", 450.00, 80085, "Unemployed");
         hospitalInstance.addEmployeeToHospitalMap(employeeInstance);
-        medicalStaffInstance = new MedicalStaff("Carlos", 900.00, 8008135, "Pig Farmer");
+        medicalStaffInstance = new Doctor("Carlos", 900.00, 8008135, "Pig Farmer");
         hospitalInstance.addEmployeeToHospitalMap(medicalStaffInstance);
         patientInstance = new HospitalPatient("Frankfurt", 1, 25);
         hospitalInstance.addPatientToHospitalMap(patientInstance);

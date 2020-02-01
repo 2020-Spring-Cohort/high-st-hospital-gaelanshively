@@ -4,22 +4,21 @@ public class HospitalPatient {
     private String patientName;
     private int patientHealth;
     private int patientBlood;
-    private byte patientBloodRecovery;
 
 
-    public HospitalPatient(String patientName, int patientHealth, int patientBlood, byte patientBloodRecovery) {
+    public HospitalPatient(String patientName, int patientHealth, int patientBlood) {
         this.patientName = patientName;
         this.patientHealth = patientHealth;
         this.patientBlood = patientBlood;
-        this.patientBloodRecovery = patientBloodRecovery;
     }
 
     public HospitalPatient() {
-        this.patientBloodRecovery = 2;
+        this.patientBlood = 20;
+        this.patientHealth = 10;
     }
 
     public String getPatientName() {
-        return patientName;
+        return String.valueOf(patientName);
     }
 
     public int getPatientHealth() {
@@ -39,22 +38,16 @@ public class HospitalPatient {
 
     public void tickPatient() {
         decreasePatientHealth();
-        checkBloodLevels();
-        determinePatientStatus();
+        increaseBloodLevels();
     }
 
-    private void checkBloodLevels() {
-        if (patientBloodRecovery = 0) {
-            patientBlood++;
-        }
+
+    private void increaseBloodLevels() {
+        patientBlood++;
     }
+
 
     private void decreasePatientHealth() {
-        patientHealth -= 5;
-        if (patientHealth < 0) {
-            killPatient();
-        } else if (patientHealth > 100) {
-            releasePatientFromHospital();
-        }
+        patientHealth -= 1;
     }
 }

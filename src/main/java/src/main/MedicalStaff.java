@@ -1,6 +1,6 @@
 package main;
 
-public class MedicalStaff extends HospitalEmployee {
+public abstract class MedicalStaff extends HospitalEmployee {
     //sub class of employees able to perform medical tasks
 
 
@@ -9,7 +9,7 @@ public class MedicalStaff extends HospitalEmployee {
 
     }
 
-    public void drawBlood() {
-
-    }
+//    public interface drawBlood() {
+//
+//    }
 }

@@ -1,6 +1,6 @@
 package main;
 
-public class HospitalEmployee {
+public abstract class HospitalEmployee {
     // super class of all hospital employees
 
 
