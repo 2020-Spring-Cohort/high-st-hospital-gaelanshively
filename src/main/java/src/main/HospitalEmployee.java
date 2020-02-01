@@ -1,19 +1,18 @@
 package main;
 
 public abstract class HospitalEmployee {
-    // super class of all hospital employees
-
-
+    protected int healingValue;
     private String employeeName;
     private double employeeSalary;
     private int employeeIdentification;
     private String employeePosition;
 
-    public HospitalEmployee(String employeeName, double employeeSalary, int employeeIdentification, String employeePosition) {
+    public HospitalEmployee(String employeeName, double employeeSalary, int employeeIdentification, String employeePosition, int healingValue) {
         this.employeeName = employeeName;
         this.employeeSalary = employeeSalary;
         this.employeeIdentification = employeeIdentification;
         this.employeePosition = employeePosition;
+        this.healingValue = healingValue;
 
     }
 

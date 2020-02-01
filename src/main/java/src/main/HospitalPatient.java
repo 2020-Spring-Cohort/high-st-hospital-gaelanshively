@@ -50,4 +50,10 @@ public class HospitalPatient {
     private void decreasePatientHealth() {
         patientHealth -= 1;
     }
+
+    public void treatThisPatient(int healingValue) {
+        patientHealth += healingValue;
+        System.out.println(patientName + " has been healed by " + healingValue + "!");
+
+    }
 }

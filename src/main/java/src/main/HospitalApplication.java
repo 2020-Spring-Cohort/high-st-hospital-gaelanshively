@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 public class HospitalApplication {
     Hospital hospital = new Hospital();
+    Scanner scannerInput = new Scanner(System.in);
 
 
     public void main(String[] args) {
-        Scanner scannerInput = new Scanner(System.in);
+
         String userCommand;
+        createInitialDoctors();
         printGreeting();
         printMainMenu();
         userCommand = scannerInput.nextLine();
@@ -38,11 +40,30 @@ public class HospitalApplication {
 
     }
 
+    private void createInitialDoctors() {
+        hospital.addEmployeeToHospitalMap(new Doctor("Ellen Ripley", 235000.00, 10005601, "Chief of Medicine", 7));
+        hospital.addEmployeeToHospitalMap(new Doctor("Dwayne Hicks", 135000.00, 21384100, "Radiologist", 5));
+        hospital.addEmployeeToHospitalMap(new Doctor("Jenette Vasquez", 145000.00, 42655100, "Chief of Surgery", 6));
+        hospital.addEmployeeToHospitalMap((new FacilityStaff("Lance Bishop", 45000.00, 34135698, "Receptionist")));
+        hospital.addEmployeeToHospitalMap((new FacilityStaff("Carter Burke", 30000.00, 28185697, "Janitor")));
+
+    }
+
     private void treatPatient() {
-        System.out.println("Which patient would you like to treat?");
+        String userPickPatient;
+        int totalHealingValue = 0;
+        for (HospitalEmployee employee : hospital.getMapOfEmployees().values()) {
+            totalHealingValue += employee.healingValue;
+        }
+
         for (HospitalPatient patient : hospital.getMapOfPatients().values()) {
             System.out.println(patient.getPatientName());
         }
+
+        System.out.println("Which patient would you like to treat?");
+        userPickPatient = scannerInput.nextLine();
+        HospitalPatient chosenPatient = hospital.getMapOfPatients().get(userPickPatient);
+        chosenPatient.treatThisPatient(totalHealingValue);
     }
 
     private void printGreeting() {
